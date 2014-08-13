@@ -11,9 +11,14 @@ gem install hex_to_rgb
 ## Usage
 
 ```
-> require 'hex_to_rgb'
-> HexToRgb.new("#FFFFFF").rgb
-=> [255, 255, 255]
+require 'hex_to_rgb'
+
+hex_to_rgb = HexToRgb.new("#ABC")
+
+hex_to_rgb.rgb #=> [170, 187, 204]
+hex_to_rgb.r   #=> 170
+hex_to_rgb.g   #=> 187
+hex_to_rgb.b   #=> 204
 ```
 
 ## Development

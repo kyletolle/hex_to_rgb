@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name     = 'hex_to_rgb'
-  s.version  = '0.0.2'
-  s.date     = '2014-08-12'
+  s.version  = '0.1.0'
+  s.date     = '2014-08-13'
   s.summary  = 'Convert hexadecimal colors to their RGB values.'
   s.authors  = ['Kyle Tolle']
   s.email    = 'kyle@nullsix.com'
