@@ -131,6 +131,27 @@ describe HexToRgb do
       end
     end
   end
+
+  describe "#g" do
+    subject { hex_to_rgb.g }
+
+    describe "with a valid hex color" do
+      let(:expected_g) { 187 }
+
+      describe "with 6 digits" do
+        let(:initial_color) { '#AABBCC' }
+
+        it "is the decimal value of the G hex digit" do
+          expect(subject).to eq expected_g
+        end
+      end
+
+      describe "with 3 digits" do
+        let(:initial_color) { '#ABC' }
+
+        it "is the decimal value of the G hex digit" do
+          expect(subject).to eq expected_g
+        end
       end
     end
 

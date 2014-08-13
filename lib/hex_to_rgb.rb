@@ -22,6 +22,10 @@ class HexToRgb
       rgb_digits[0]
     end
   end
+
+  def g
+    if valid?
+      rgb_digits[1]
     end
   end
 
