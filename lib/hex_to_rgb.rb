@@ -56,17 +56,18 @@ private
   end
 
   def rgb_digits
-    hex_digits.map do |d|
-      digit =
-        case just_digits.length
-        when 3
-          d*2
-        when 6
-          d
-        end
+    @rgb_digits ||=
+      hex_digits.map do |d|
+        digit =
+          case just_digits.length
+          when 3
+            d*2
+          when 6
+            d
+          end
 
-      digit.to_i(16)
-    end
+        digit.to_i(16)
+      end
   end
 end
 
