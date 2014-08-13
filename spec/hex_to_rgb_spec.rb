@@ -163,5 +163,37 @@ describe HexToRgb do
       end
     end
   end
+
+  describe "#b" do
+    subject { hex_to_rgb.b }
+
+    describe "with a valid hex color" do
+      let(:expected_b) { 204 }
+
+      describe "with 6 digits" do
+        let(:initial_color) { '#AABBCC' }
+
+        it "is the decimal value of the B hex digit" do
+          expect(subject).to eq expected_b
+        end
+      end
+
+      describe "with 3 digits" do
+        let(:initial_color) { '#ABC' }
+
+        it "is the decimal value of the B hex digit" do
+          expect(subject).to eq expected_b
+        end
+      end
+    end
+
+    describe "with an invalid hex color" do
+      include_context "with invalid hex color"
+
+      it "is nil" do
+        expect(subject).to be_nil
+      end
+    end
+  end
 end
 
