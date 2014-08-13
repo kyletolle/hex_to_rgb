@@ -8,5 +8,7 @@ Gem::Specification.new do |s|
   s.files    = ['lib/hex_to_rgb.rb', 'spec/hex_to_rgb_spec.rb']
   s.license  = 'MIT'
   s.homepage = 'https://github.com/kyletolle/hex_to_rgb'
+
+  s.add_development_dependency "rspec", [">= 3.0.0"]
 end
 
