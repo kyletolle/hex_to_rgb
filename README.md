@@ -16,6 +16,23 @@ gem install hex_to_rgb
 => [255, 255, 255]
 ```
 
+## Development
+
+### Install
+
+```
+gem install --dev hex_to_rgb
+```
+
+
+### Specs
+
+The default Rake task is to run the specs.
+
+```
+rake
+```
+
 ## License
 
 MIT
