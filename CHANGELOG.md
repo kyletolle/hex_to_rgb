@@ -1,6 +1,6 @@
 # Change Log
 
-## v.0.1.0
+## v0.1.0
 
 - Add support for 3 digit colors in `#rgb`.
 - Add `#r` method.
