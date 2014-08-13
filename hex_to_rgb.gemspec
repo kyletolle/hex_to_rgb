@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = 'hex_to_rgb'
-  s.version  = '0.0.1'
+  s.version  = '0.0.2'
   s.date     = '2014-08-12'
   s.summary  = 'Convert hexadecimal colors to their RGB values.'
   s.authors  = ['Kyle Tolle']
@@ -9,6 +9,6 @@ Gem::Specification.new do |s|
   s.license  = 'MIT'
   s.homepage = 'https://github.com/kyletolle/hex_to_rgb'
 
-  s.add_development_dependency "rspec", [">= 3.0.0"]
+  s.add_development_dependency 'rspec', '~> 3.0', '>= 3.0.0'
 end
 
