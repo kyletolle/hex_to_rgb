@@ -14,6 +14,10 @@ describe HexToRgb do
     end
   end
 
+  shared_context "with invalid hex color" do
+    let(:initial_color) { '#XYZ' }
+  end
+
   describe "#valid?" do
     subject { hex_to_rgb.valid? }
 
@@ -57,7 +61,7 @@ describe HexToRgb do
       end
 
       describe "with non-hexadecimal digits" do
-        let(:initial_color) { '#XYZ' }
+        include_context "with invalid hex color"
 
         include_examples "is not a valid color"
       end
@@ -79,6 +83,27 @@ describe HexToRgb do
       let(:initial_color) { 'kyle' }
 
       it "returns nil" do
+        expect(subject).to be_nil
+      end
+    end
+  end
+
+  describe "#r" do
+    let(:initial_color) { '#AABBCC' }
+    subject { hex_to_rgb.r }
+
+    describe "with a valid hex color" do
+      let(:expected_r) { 170 }
+
+      it "is the decimal value of the R hex digit" do
+        expect(subject).to eq expected_r
+      end
+    end
+
+    describe "with an invalid hex color" do
+      include_context "with invalid hex color"
+
+      it "is nil" do
         expect(subject).to be_nil
       end
     end

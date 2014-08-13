@@ -17,6 +17,12 @@ class HexToRgb
     end
   end
 
+  def r
+    if valid?
+      rgb_digits.first
+    end
+  end
+
 private
   # Based on the article: http://www.mkyong.com/regular-expressions/how-to-validate-hex-color-code-with-regular-expression/
   HEX_COLOR_REGEX = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/
