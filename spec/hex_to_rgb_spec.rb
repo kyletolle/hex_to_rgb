@@ -72,10 +72,22 @@ describe HexToRgb do
     subject { hex_to_rgb.rgb }
 
     describe "with a valid hex color" do
-      let(:expected_rgb_colors) { [ 255, 255, 255 ] }
+      describe "with 6 digits" do
+        let(:expected_rgb_colors) { [ 255, 255, 255 ] }
 
-      it "returns array of rgb decimal values" do
-        expect(subject).to eq expected_rgb_colors
+        it "returns array of rgb decimal values" do
+          expect(subject).to eq expected_rgb_colors
+        end
+      end
+
+      describe "with 3 digits" do
+        let(:initial_color) { '#FFF' }
+
+        let(:expected_rgb_colors) { [ 255, 255, 255 ] }
+
+        it "returns array of rgb decimal values" do
+          expect(subject).to eq expected_rgb_colors
+        end
       end
     end
 
@@ -89,14 +101,36 @@ describe HexToRgb do
   end
 
   describe "#r" do
-    let(:initial_color) { '#AABBCC' }
     subject { hex_to_rgb.r }
 
     describe "with a valid hex color" do
       let(:expected_r) { 170 }
 
-      it "is the decimal value of the R hex digit" do
-        expect(subject).to eq expected_r
+      describe "with 6 digits" do
+        let(:initial_color) { '#AABBCC' }
+
+        it "is the decimal value of the R hex digit" do
+          expect(subject).to eq expected_r
+        end
+      end
+
+      describe "with 3 digits" do
+        let(:initial_color) { '#ABC' }
+
+        it "is the decimal value of the R hex digit" do
+          expect(subject).to eq expected_r
+        end
+      end
+    end
+
+    describe "with an invalid hex color" do
+      include_context "with invalid hex color"
+
+      it "is nil" do
+        expect(subject).to be_nil
+      end
+    end
+  end
       end
     end
 

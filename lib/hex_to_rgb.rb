@@ -19,7 +19,9 @@ class HexToRgb
 
   def r
     if valid?
-      rgb_digits.first
+      rgb_digits[0]
+    end
+  end
     end
   end
 
@@ -44,7 +46,17 @@ private
   end
 
   def rgb_digits
-    hex_digits.map{|d| d.to_i(16) }
+    hex_digits.map do |d|
+      digit =
+        case just_digits.length
+        when 3
+          d*2
+        when 6
+          d
+        end
+
+      digit.to_i(16)
+    end
   end
 end
 
