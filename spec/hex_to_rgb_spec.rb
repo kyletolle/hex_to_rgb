@@ -1,4 +1,5 @@
-require_relative '../lib/hex_to_rgb.rb'
+require 'rspec'
+require 'hex_to_rgb'
 
 describe HexToRgb do
   let(:expected_color) { '#FFFFFF' }
