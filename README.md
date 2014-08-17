@@ -1,5 +1,7 @@
 # HexToRgb
 
+[![Gem Version](https://badge.fury.io/rb/hex_to_rgb.svg)](http://badge.fury.io/rb/hex_to_rgb)
+
 Turn a hexadecimal color into its corresponding RGB, decimal values!
 
 ## Install
@@ -28,7 +30,6 @@ hex_to_rgb.b   #=> 204
 ```
 gem install --dev hex_to_rgb
 ```
-
 
 ### Specs
 
