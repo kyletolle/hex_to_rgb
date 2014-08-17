@@ -2,12 +2,21 @@ require 'rspec'
 require 'hex_to_rgb'
 
 describe HexToRgb do
-  let(:expected_color) { '#FFFFFF' }
-  let(:initial_color)  { expected_color }
   let(:hex_to_rgb)     { described_class.new(initial_color) }
+
+  shared_context "with initial white color" do
+    let(:initial_color) { '#FFFFFF' }
+  end
+
+  shared_context "with expected white color" do
+    let(:expected_color) { '#FFFFFF' }
+  end
 
   describe "#hex" do
     subject { hex_to_rgb.hex }
+
+    include_context "with initial white color"
+    include_context "with expected white color"
 
     it "returns the color it was initialized with" do
       expect(subject).to eq expected_color
@@ -20,6 +29,8 @@ describe HexToRgb do
 
   describe "#valid?" do
     subject { hex_to_rgb.valid? }
+
+    include_context "with initial white color"
 
     describe "for a valid hex color" do
       shared_examples "is a valid color" do
@@ -73,6 +84,8 @@ describe HexToRgb do
 
     describe "with a valid hex color" do
       describe "with 6 digits" do
+        include_context "with initial white color"
+
         let(:expected_rgb_colors) { [ 255, 255, 255 ] }
 
         it "returns array of rgb decimal values" do
