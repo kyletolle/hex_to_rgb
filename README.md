@@ -23,6 +23,11 @@ hex_to_rgb.g   #=> 187
 hex_to_rgb.b   #=> 204
 ```
 
+## Related Gem
+
+[RgbToHexColor](https://github.com/kyletolle/rgb_to_hex_color) - Convert rgb
+colors into hex colors.
+
 ## Development
 
 ### Install
